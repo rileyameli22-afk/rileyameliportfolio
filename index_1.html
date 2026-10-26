@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Riley Ameli, Project Coordinator. Creator programs, product launches, partnerships, and event planning for outdoor and lifestyle brands.">
+<title>Riley Ameli Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@500;600&display=swap">
+<style>
+/* Layout: pink grain hero carried over from the Canva, then a single editorial column of case studies with a meta rail on the left */
+:root {
+  --bg: #FBF5F6;
+  --surface: #FFFFFF;
+  --ink: #1E1518;
+  --muted: #6B5A60;
+  --line: #E9D6DC;
+  --pink: #F2B8C8;
+  --pink-soft: #F8DCE4;
+  --accent: #A8325A;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --label: "Archivo Narrow", "Arial Narrow", "Helvetica Neue", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161012; --surface: #1F171A; --ink: #F7E9ED; --muted: #BBA4AB;
+    --line: #3A2B30; --pink: #7A3550; --pink-soft: #2C1C22; --accent: #F2A3BC;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161012; --surface: #1F171A; --ink: #F7E9ED; --muted: #BBA4AB;
+  --line: #3A2B30; --pink: #7A3550; --pink-soft: #2C1C22; --accent: #F2A3BC;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.label { font-family: var(--label); font-weight: 600; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background: var(--pink-soft); border-bottom: 1px solid var(--line); }
+.hero::before {
+  content: ""; position: absolute; inset: -20%;
+  background:
+    radial-gradient(40% 35% at 18% 30%, var(--pink) 0%, transparent 70%),
+    radial-gradient(35% 30% at 80% 20%, var(--pink) 0%, transparent 70%),
+    radial-gradient(45% 35% at 70% 85%, var(--pink) 0%, transparent 70%),
+    radial-gradient(30% 25% at 30% 90%, var(--pink) 0%, transparent 70%);
+  filter: blur(30px);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; opacity: .22; mix-blend-mode: multiply; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+.hero .wrap { position: relative; z-index: 1; padding-block: 56px 48px; display: grid; gap: 28px; }
+.hero h1 { font-size: clamp(56px, 11vw, 132px); line-height: .9; font-weight: 700; text-transform: uppercase; letter-spacing: -.02em; }
+.hero h1 em { font-style: italic; font-weight: 500; text-transform: none; }
+.hero .lede { font-size: clamp(17px, 1.9vw, 19px); line-height: 1.55; max-width: 54ch; margin: 0; }
+.hero .role { display: block; font-family: var(--label); font-weight: 600; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.hero-row { display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.facts li { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--ink); border-radius: 999px; padding: 6px 14px; }
+.now { font-size: 15px; margin: 0; }
+.now strong { font-weight: 600; }
+
+nav.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav.jump .wrap { display: flex; gap: 22px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
+nav.jump a { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+nav.jump a:hover { color: var(--accent); }
+
+section { padding-block: 64px; border-bottom: 1px solid var(--line); }
+.sec-head { display: grid; gap: 10px; margin-bottom: 40px; }
+.sec-head h2 { font-size: clamp(36px, 5.5vw, 56px); line-height: 1; }
+.sec-head p { margin: 0; max-width: 60ch; color: var(--muted); }
+
+/* Case studies */
+.case { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px 48px; padding-block: 36px; border-top: 1px solid var(--line); }
+.case:first-of-type { border-top: 0; padding-top: 0; }
+.meta { display: grid; gap: 14px; align-content: start; }
+.meta dl { margin: 0; display: grid; gap: 12px; }
+.meta dt { font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.meta dd { margin: 2px 0 0; font-size: 14.5px; line-height: 1.4; }
+.story { min-width: 0; display: grid; gap: 16px; }
+.story h3 { font-size: clamp(28px, 3.6vw, 38px); line-height: 1.05; }
+.story h3 small { display: block; font-family: var(--body); font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 8px; }
+.story p { margin: 0; max-width: 64ch; }
+.story ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 64ch; }
+.story li::marker { color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { font-size: 13px; background: var(--pink-soft); border-radius: 999px; padding: 4px 12px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.stats div { background: var(--surface); padding: 16px 16px 14px; display: grid; gap: 2px; }
+.stats b { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.05; font-variant-numeric: tabular-nums lining-nums; }
+.stats span { font-size: 13px; color: var(--muted); line-height: 1.35; }
+
+/* Boarding-pass style creator passport, echoing the real OR insert */
+.pass { display: grid; grid-template-columns: minmax(0, 1fr) 132px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; max-width: 560px; }
+.pass .main { padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
+.pass .route { display: flex; align-items: center; gap: 14px; font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; }
+.pass .route i { font-style: normal; font-family: var(--body); font-size: 18px; color: var(--accent); }
+.pass .row { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.pass .row div { display: grid; }
+.pass .row span { font-family: var(--label); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.pass .row b { font-size: 14px; font-weight: 600; }
+.pass .stub { border-left: 2px dashed var(--line); padding: 16px 14px; display: grid; gap: 8px; align-content: center; background: var(--pink-soft); }
+.pass .stub span { font-family: var(--label); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.pass .stub b { font-family: var(--display); font-size: 22px; line-height: 1.1; }
+
+.brands { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--display); font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2; }
+.brands span:not(:last-child)::after { content: "/"; margin-left: 18px; color: var(--accent); font-family: var(--body); font-weight: 400; }
+
+/* Events */
+.events { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.invite { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px 20px; display: grid; gap: 8px; align-content: start; }
+.invite .when { font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.invite h3 { font-size: 26px; line-height: 1.05; text-transform: uppercase; font-weight: 700; }
+.invite p { margin: 0; font-size: 14.5px; color: var(--muted); }
+.feature-event { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; margin-bottom: 32px; align-items: start; }
+.feature-event .invite h3 { font-size: 34px; }
+
+.design-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.skills h3 { font-size: 24px; margin-bottom: 10px; }
+.skills ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 15px; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--bg); border-bottom: 0; }
+.contact .label { color: var(--pink); }
+.contact h2 { font-size: clamp(44px, 8vw, 92px); line-height: .95; text-transform: uppercase; font-weight: 700; }
+.contact .wrap { display: grid; gap: 22px; }
+.contact-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.phone { font-family: var(--display); font-size: clamp(24px, 3.4vw, 34px); user-select: all; }
+.btn { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; border-radius: 999px; padding: 10px 18px; border: 1px solid var(--bg); color: var(--bg); background: transparent; cursor: pointer; text-decoration: none; }
+.btn:hover { background: var(--bg); color: var(--ink); }
+.contact a.btn { color: var(--bg); }
+.contact a.btn:hover { color: var(--ink); }
+footer { padding-block: 22px; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .case { grid-template-columns: 1fr; }
+  .meta dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature-event { grid-template-columns: 1fr; }
+  .skills { grid-template-columns: 1fr; }
+  section { padding-block: 48px; }
+}
+@media (max-width: 420px) {
+  .pass { grid-template-columns: 1fr; }
+  .pass .stub { border-left: 0; border-top: 2px dashed var(--line); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 { animation: rise .7s ease-out both; }
+  @keyframes rise { from { transform: translateY(12px); opacity: .4; } to { transform: none; opacity: 1; } }
+}
+</style>
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap">
+    <span class="label">Portfolio 2024 to 2026</span>
+    <h1>Riley<br>Ameli</h1>
+    <div class="hero-row">
+      <p class="lede"><span class="role">Project Coordinator at Popfly</span>Project coordinator with a background in creator programs, product launches, and event planning for outdoor and lifestyle brands. I work directly with our CEO and COO on strategic decisions and people management, and I build the processes that keep cross-functional projects on track.</p>
+      <div style="display:grid; gap:14px;">
+        <p class="now"><strong>Popfly</strong> is a creator marketing platform for outdoor and lifestyle brands.</p>
+        <ul class="facts">
+          <li>Project coordination</li>
+          <li>Program management</li>
+          <li>Partnerships</li>
+          <li>Event planning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <div class="wrap">
+    <a href="#work">Popfly work</a>
+    <a href="#events">Events</a>
+    <a href="#design">Exterior design</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Selected work at Popfly</span>
+      <h2>Creator programs, launches &amp; the systems behind them</h2>
+      <p>As project coordinator, I keep cross-functional work moving between our brand customers, our creator community, and our leadership team. These are programs I ran end to end, launches I coordinated, and systems I built.</p>
+    </div>
+
+    <article class="case">
+      <aside class="meta">
+        <dl>
+          <div><dt>Project</dt><dd>Outdoor Retailer 2026, Minneapolis</dd></div>
+          <div><dt>When</dt><dd>August 19 to 21, 2026</dd></div>
+          <div><dt>My role</dt><dd>Ran the Wild Reach creator program, brand matching, and Creator Passports</dd></div>
+          <div><dt>Team</dt><dd>Worked alongside Popfly's partnerships and brand teams and the Outdoor Retailer show team</dd></div>
+        </dl>
+      </aside>
+      <div class="story">
+        <h3>Wild Reach Creator Program<small>Bringing outdoor creators to the industry's biggest trade show, and matching every one to the right brands</small></h3>
+        <p>Outdoor Retailer wanted creators on the show floor. I built the program that got them there. I managed the creator roster across four tiers, added a local tier for Minneapolis creators, and matched each creator with 7 to 10 exhibiting brands based on fit, location, and audience.</p>
+        <div class="stats" role="list">
+          <div role="listitem"><b>447</b><span>creator applications</span></div>
+          <div role="listitem"><b>109</b><span>creators accepted</span></div>
+          <div role="listitem"><b>903</b><span>creator and brand connections</span></div>
+          <div role="listitem"><b>80</b><span>brands onboarded</span></div>
+          <div role="listitem"><b>12.5M</b><span>impressions</span></div>
+          <div role="listitem"><b>1,683</b><span>posts live</span></div>
+          <div role="listitem"><b>2.4%</b><span>engagement rate</span></div>
+          <div role="listitem"><b>4.3M</b><span>views on the top Reel</span></div>
+        </div>
+        <ul>
+          <li>Pulled about 200 consumer-facing brands from the exhibitor list and cross-checked them against our customer base to flag existing accounts and warm leads.</li>
+          <li>Designed the physical Creator Passport: a 5x7 boarding-pass style insert with each creator's brand matches, booth numbers, and QR codes.</li>
+          <li>Built the creator roster deck, prepped creator calls, and handled creator and brand communication before, during, and after the show.</li>
+          <li>Pivoted toward local Minneapolis creators, which ended up being one of the biggest wins of the event.</li>
+          <li>Ran logistics for our Pop Off party during the show.</li>
+        </ul>
+        <div class="pass" aria-label="Creator Passport design, recreated">
+          <div class="main">
+            <span class="label">Wild Reach Creator Passport</span>
+            <div class="route">CT <i aria-hidden="true">&#9992;</i> MSP</div>
+            <div class="row">
+              <div><span>Brand matches</span><b>7 to 10 per creator</b></div>
+              <div><span>Includes</span><b>Booth numbers + QR codes</b></div>
+            </div>
+          </div>
+          <div class="stub">
+            <span>Format</span>
+            <b>5x7 print insert</b>
+          </div>
+        </div>
+        <p style="font-size:14.5px; color:var(--muted);">Press: the Star Tribune covered standout gear from the show, and TSNN credited OR 2026 for embracing creators. New brands started asking to join Popfly because of it.</p>
+        <div class="tags"><span>Program management</span><span>Creator relations</span><span>Brand matching</span><span>Print design</span><span>Event logistics</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside class="meta">
+        <dl>
+          <div><dt>Project</dt><dd>Evergreens launch</dd></div>
+          <div><dt>When</dt><dd>Launched July 7, 2026</dd></div>
+                    <div><dt>My role</dt><dd>Launch marketing, customer education, and executive content</dd></div>
+        </dl>
+      </aside>
+      <div class="story">
+        <h3>Evergreens Launch<small>Introducing Popfly's always-on creator ambassador program to our customers</small></h3>
+        <p>Coordinated the customer-facing launch of Evergreens, Popfly's always-on creator ambassador program. The focus was making a new program model easy for brands to understand and adopt.</p>
+        <ul>
+          <li>Created a physical mailer for paying customers with a plantable seed card, tying the product name to something they could actually grow.</li>
+          <li>Ran a live training session to walk customers through how the program works.</li>
+          <li>Planned the LinkedIn content strategy for our founder and CEO around the launch.</li>
+          <li>Wrote a dedicated newsletter edition explaining the program.</li>
+        </ul>
+        <div class="tags"><span>Product launch</span><span>Direct mail</span><span>Customer training</span><span>LinkedIn strategy</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside class="meta">
+        <dl>
+          <div><dt>Project</dt><dd>The Weekly Trail Mix</dd></div>
+          <div><dt>Cadence</dt><dd>Every Tuesday</dd></div>
+          <div><dt>My role</dt><dd>Writer, editor, and producer</dd></div>
+        </dl>
+      </aside>
+      <div class="story">
+        <h3>The Weekly Trail Mix<small>A weekly insights newsletter for every Popfly brand customer</small></h3>
+        <p>I write and send our weekly customer newsletter in our CEO's voice. Each edition takes one trend or opportunity in creator marketing and makes it something a brand can act on that week. It ends with a Flyby Challenge, a small prompt to try something new on the platform.</p>
+        <ul>
+          <li>Recent editions covered creator storefronts as an always-on retail model, Instagram Stories tracking, the Summer of Adventure campaign, Evergreens, and a swag bag opportunity for Outdoor Retailer brands.</li>
+          <li>Built a reusable HTML template and voice guide so every edition looks and sounds consistent.</li>
+        </ul>
+        <div class="tags"><span>Email marketing</span><span>Copywriting</span><span>Executive voice</span><span>HTML email</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside class="meta">
+        <dl>
+          <div><dt>Project</dt><dd>Brand creator campaigns</dd></div>
+          <div><dt>Scope</dt><dd>Ongoing portfolio of brand accounts</dd></div>
+          <div><dt>My role</dt><dd>Campaign coordination across brand accounts</dd></div>
+        </dl>
+      </aside>
+      <div class="story">
+        <h3>Creator Campaigns for Outdoor &amp; Lifestyle Brands<small>Keeping campaigns moving from shortlist to posted content</small></h3>
+        <div class="brands" aria-label="Brands">
+          <span>Hydro Flask</span><span>Osprey</span><span>SMITH</span><span>Alpaka</span><span>FBN</span><span>Flexsteel</span><span>AllTrails</span><span>Backcountry</span>
+        </div>
+        <p>I coordinate creator campaigns day to day across a portfolio of brand accounts. The work runs from UGC and campus programs to TikTok Shop Live and event activations.</p>
+        <ul>
+          <li>Hydro Flask Carryout Lunch and Hot Bev content, SMITH's Ulterior Collection, and Osprey campus UGC.</li>
+          <li>Recruited creators for Alpaka's TikTok Shop Live and an unpaid creator activation at TheFitExpo Anaheim.</li>
+          <li>Handle shortlists, rate negotiations, usage terms, contract follow-ups, and creator support so brands can stay focused on the creative.</li>
+        </ul>
+        <div class="tags"><span>Account management</span><span>Negotiation</span><span>Contracts &amp; usage rights</span><span>Creator sourcing</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside class="meta">
+        <dl>
+          <div><dt>Project</dt><dd>Summer of Adventure + social</dd></div>
+          <div><dt>My role</dt><dd>Launch content and social posts</dd></div>
+        </dl>
+      </aside>
+      <div class="story">
+        <h3>Summer of Adventure Launch<small>Seasonal campaign content for Popfly's own channels</small></h3>
+        <p>Created launch content and social posts for Summer of Adventure and the Evergreens launch. The goal was content that feels warm and real, like the creators we work with.</p>
+        <div class="tags"><span>Social content</span><span>Photo + video</span><span>Campaign launch</span></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside class="meta">
+        <dl>
+          <div><dt>Project</dt><dd>Systems &amp; content</dd></div>
+          <div><dt>My role</dt><dd>Builder and owner</dd></div>
+        </dl>
+      </aside>
+      <div class="story">
+        <h3>Operations &amp; Internal Systems<small>Templates, guides, and tools I built to help the team scale</small></h3>
+        <ul>
+          <li><strong>Case study program.</strong> Turned our published customer stories, like Camp Chef, Carhartt, Haute Haus, and Visit Salt Lake, into a repeatable format for writing new ones fast.</li>
+          <li><strong>Social listening report.</strong> Designed a monthly client report covering brand mentions, product confusion, unexpected use cases, and creator recommendations.</li>
+          <li><strong>Operations guide.</strong> Wrote our internal guide for new customer setup, billing, and creator payments.</li>
+          <li><strong>Brand strategy builder.</strong> Built an internal web tool with separate workspaces for each brand.</li>
+          <li><strong>Executive content.</strong> Draft LinkedIn posts for our founder and CEO around launches, events, and hiring.</li>
+          <li><strong>AI workflows.</strong> Set up AI-assisted templates that speed up case studies, newsletters, and campaign briefs.</li>
+        </ul>
+        <div class="tags"><span>Process design</span><span>Documentation</span><span>Content strategy</span><span>AI tools</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Events</span>
+      <h2>Events I've planned</h2>
+      <p>I plan and style events from the first idea to clean-up. Themes, vendors, decor, budgets, and day-of flow.</p>
+    </div>
+    <div class="feature-event">
+      <div class="invite">
+        <span class="when">December 2024</span>
+        <h3>C + W Engagement</h3>
+        <p>Planned and styled an engagement celebration. Custom signage and stationery, a candlelit tablescape, florals, dessert, and a seated dinner for a full room of guests.</p>
+      </div>
+      <div class="story">
+        <p>What I handled for most events:</p>
+        <ul>
+          <li>Theme and visual direction, from invitations to signage</li>
+          <li>Venue, vendor, and budget coordination</li>
+          <li>Decor, florals, and tablescapes</li>
+          <li>Run of show and day-of management</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sec-head" style="margin-bottom:20px;">
+      <span class="label">Chi Omega chapter events, 2025</span>
+    </div>
+    <div class="events">
+      <div class="invite"><span class="when">February 2025</span><h3>New Member Dance</h3><p>Themed dance with custom decor, photo moments, and merch.</p></div>
+      <div class="invite"><span class="when">March 2025</span><h3>Tacky Prom</h3><p>Roller rink takeover with themed signage and decor.</p></div>
+      <div class="invite"><span class="when">March 2025</span><h3>Moms Day</h3><p>Daytime brunch with florals, food styling, and gifts.</p></div>
+      <div class="invite"><span class="when">April 2025</span><h3>White Carnation Formal</h3><p>Evening formal at an outdoor estate venue.</p></div>
+      <div class="invite"><span class="when">August 2025</span><h3>Crush</h3><p>Outdoor waterfront party with tents, banners, and a big guest list.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Exterior design</span>
+      <h2>Residential exterior design</h2>
+      <p>Design work for home exteriors and outdoor living spaces.</p>
+    </div>
+    <div class="design-grid">
+      <div class="invite"><span class="when">Presentations</span><h3>Design Presentations</h3><p>Client-facing boards and renderings for home exteriors, patios, and outdoor living areas.</p></div>
+      <div class="invite"><span class="when">Planning</span><h3>Hardscape &amp; Sourcing</h3><p>Plant palettes, material selections, and sourcing sheets that turned a concept into a buildable plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">What I bring</span>
+      <h2>Skills &amp; tools</h2>
+    </div>
+    <div class="skills">
+      <div>
+        <h3>Project management</h3>
+        <ul><li>Cross-functional project coordination</li><li>Program planning and execution</li><li>Executive partnership with CEO and COO</li><li>Process design and documentation</li></ul>
+      </div>
+      <div>
+        <h3>Partnerships &amp; marketing</h3>
+        <ul><li>Creator recruiting and relations</li><li>Brand account coordination</li><li>Rate and usage negotiation</li><li>Newsletters, case studies, and launches</li></ul>
+      </div>
+      <div>
+        <h3>Events &amp; design</h3>
+        <ul><li>Event planning and production</li><li>Print and visual design in Canva</li><li>Presentations and decks</li><li>Google Workspace, Slack, AI tools</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="label">Let's talk</span>
+    <h2>Get in touch</h2>
+    <div class="contact-row">
+      <span class="phone" id="phone">+1 (949) 656-5344</span>
+      <button class="btn" id="copy" type="button">Copy number</button>
+      <a class="btn" href="https://canva.link/mpb76bn0h8qep13" target="_blank" rel="noopener">See the photo portfolio</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Riley Ameli, Portfolio 2024 to 2026</div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click', async (e) => {
+  const btn = e.currentTarget;
+  const text = document.getElementById('phone').textContent.trim();
+  try {
+    await navigator.clipboard.writeText(text);
+    btn.textContent = 'Copied';
+  } catch (err) {
+    const r = document.createRange();
+    r.selectNodeContents(document.getElementById('phone'));
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent = 'Selected';
+  }
+  setTimeout(() => { btn.textContent = 'Copy number'; }, 1800);
+});
+</script>
+
+</body>
+</html>
