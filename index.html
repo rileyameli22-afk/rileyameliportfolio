@@ -1,157 +1,143 @@
+Claude
+Claude Desktop (macOS), Connected
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Index · HTML
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Riley Ameli, Project Coordinator. Creator programs, product launches, partnerships, and event planning for outdoor and lifestyle brands.">
+<meta name="description" content="Riley Ameli, Project Coordinator. A creative with a background in social media, brand partnerships, and events, turning ideas into things people remember.">
 <title>Riley Ameli Portfolio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ovo&family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Biryani:wght@400;600&display=swap">
 <style>
-/* Layout: pink grain hero carried over from the Canva, then a single editorial column of case studies with a meta rail on the left */
+/* Calm editorial look, a yellow highlight, Maragsa (Playfair Display fallback) for headings, Poppins for body, AC Compacta Script (Cormorant Garamond italic fallback) for handwritten notes,
+   and photo slots that stay hidden until you add the image files to the /images folder. */
+@font-face { font-family: "Maragsa Display"; src: local("Maragsa Display"), local("Maragsa"), url("fonts/MaragsaDisplay.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "AC Compacta Script"; src: local("AC Compacta Script"), local("Compacta Script"), url("fonts/ACCompactaScript.woff2") format("woff2"); font-display: swap; }
 :root {
-  --bg: #FBF5F6;
+  --bg: #F6F1E7;
   --surface: #FFFFFF;
-  --ink: #1E1518;
-  --muted: #6B5A60;
-  --line: #E9D6DC;
-  --pink: #F2B8C8;
-  --pink-soft: #F8DCE4;
-  --accent: #A8325A;
-  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
-  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --label: "Archivo Narrow", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --ink: #23272E;
+  --muted: #454A52;
+  --line: #DAD7CC;
+  --blue: #A7D2DD;
+  --blue-soft: #DCEDF1;
+  --yellow: #F2B61E;
+  --green: #5E905B;
+  --red: #B83A22;
+  --accent: #8A2A18;
+  --display: "Maragsa Display", "Maragsa", "Cormorant Garamond", "Georgia", serif;
+  --serif: "Lora", "Georgia", serif;
+  --body: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --hand: "AC Compacta Script", "Compacta Script", "Cormorant Garamond", "Georgia", serif;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #161012; --surface: #1F171A; --ink: #F7E9ED; --muted: #BBA4AB;
-    --line: #3A2B30; --pink: #7A3550; --pink-soft: #2C1C22; --accent: #F2A3BC;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #161012; --surface: #1F171A; --ink: #F7E9ED; --muted: #BBA4AB;
-  --line: #3A2B30; --pink: #7A3550; --pink-soft: #2C1C22; --accent: #F2A3BC;
-  color-scheme: dark;
-}
-
+ 
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-.label { font-family: var(--label); font-weight: 600; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -.01em; }
-
+.label { font-family: var(--hand); font-style: italic; font-weight: 600; font-size: 27px; line-height: 1.1; color: var(--accent); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -.015em; }
+.hl { background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%); padding: 0 .1em; }
+ 
 /* Hero */
-.hero { position: relative; overflow: hidden; background: var(--pink-soft); border-bottom: 1px solid var(--line); }
-.hero::before {
-  content: ""; position: absolute; inset: -20%;
-  background:
-    radial-gradient(40% 35% at 18% 30%, var(--pink) 0%, transparent 70%),
-    radial-gradient(35% 30% at 80% 20%, var(--pink) 0%, transparent 70%),
-    radial-gradient(45% 35% at 70% 85%, var(--pink) 0%, transparent 70%),
-    radial-gradient(30% 25% at 30% 90%, var(--pink) 0%, transparent 70%);
-  filter: blur(30px);
-}
-.hero::after {
-  content: ""; position: absolute; inset: 0; opacity: .22; mix-blend-mode: multiply; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-}
-.hero .wrap { position: relative; z-index: 1; padding-block: 56px 48px; display: grid; gap: 28px; }
-.hero h1 { font-size: clamp(56px, 11vw, 132px); line-height: .9; font-weight: 700; text-transform: uppercase; letter-spacing: -.02em; }
-.hero h1 em { font-style: italic; font-weight: 500; text-transform: none; }
-.hero .lede { font-size: clamp(17px, 1.9vw, 19px); line-height: 1.55; max-width: 54ch; margin: 0; }
-.hero .role { display: block; font-family: var(--label); font-weight: 600; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.hero { position: relative; overflow: hidden; background: var(--bg); border-bottom: 1px solid var(--line); }
+.hero .wrap { position: relative; z-index: 1; padding-block: 56px 48px; display: grid; gap: 24px; }
+.hero h1 { font-size: clamp(60px, 12vw, 140px); line-height: .92; font-weight: 500; letter-spacing: -.03em; }
+.hero .lede { font-size: clamp(17px, 1.9vw, 19px); line-height: 1.6; max-width: 56ch; margin: 0; }
+.hero .role { display: block; font-family: var(--display); font-style: italic; font-weight: 500; font-size: 22px; margin-bottom: 10px; }
 .hero-row { display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between; }
 .facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.facts li { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--ink); border-radius: 999px; padding: 6px 14px; }
-.now { font-size: 15px; margin: 0; }
-.now strong { font-weight: 600; }
-
+.facts li { font-weight: 500; font-size: 14px; border: 1px solid var(--ink); border-radius: 999px; padding: 6px 14px; background: color-mix(in srgb, var(--surface) 55%, transparent); }
+.now { font-size: 15px; margin: 0; max-width: 34ch; }
+.hand-note { max-width: 24ch; font-family: var(--hand); font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.15; margin: 0; }
+ 
 nav.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 nav.jump .wrap { display: flex; gap: 22px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
-nav.jump a { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); text-decoration: none; white-space: nowrap; }
+nav.jump a { font-weight: 500; font-size: 15px; color: var(--ink); text-decoration: none; white-space: nowrap; }
 nav.jump a:hover { color: var(--accent); }
-
+ 
 section { padding-block: 64px; border-bottom: 1px solid var(--line); }
-.sec-head { display: grid; gap: 10px; margin-bottom: 40px; }
-.sec-head h2 { font-size: clamp(36px, 5.5vw, 56px); line-height: 1; }
+.sec-head { display: grid; gap: 6px; margin-bottom: 40px; }
+.sec-head h2 { font-size: clamp(36px, 5.5vw, 56px); line-height: 1.05; }
 .sec-head p { margin: 0; max-width: 60ch; color: var(--muted); }
-
+ 
 /* Case studies */
 .case { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px 48px; padding-block: 36px; border-top: 1px solid var(--line); }
 .case:first-of-type { border-top: 0; padding-top: 0; }
 .meta { display: grid; gap: 14px; align-content: start; }
 .meta dl { margin: 0; display: grid; gap: 12px; }
-.meta dt { font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.meta dt { line-height: 1.1; }
 .meta dd { margin: 2px 0 0; font-size: 14.5px; line-height: 1.4; }
 .story { min-width: 0; display: grid; gap: 16px; }
-.story h3 { font-size: clamp(28px, 3.6vw, 38px); line-height: 1.05; }
-.story h3 small { display: block; font-family: var(--body); font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 8px; }
+.story h3 small { display: block; font-size: 15px; color: var(--muted); letter-spacing: 0; margin-top: 8px; line-height: 1.4; }
 .story p { margin: 0; max-width: 64ch; }
 .story ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; max-width: 64ch; }
-.story li::marker { color: var(--accent); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags span { font-size: 13px; background: var(--pink-soft); border-radius: 999px; padding: 4px 12px; }
-
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.tags span { font-size: 13px; padding: 4px 12px; }
+.chapter-note { margin: 0 0 30px; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); overflow: hidden; }
 .stats div { background: var(--surface); padding: 16px 16px 14px; display: grid; gap: 2px; }
-.stats b { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.05; font-variant-numeric: tabular-nums lining-nums; }
+.stats b { font-size: clamp(30px, 3.8vw, 42px); line-height: 1.05; font-variant-numeric: tabular-nums lining-nums; }
 .stats span { font-size: 13px; color: var(--muted); line-height: 1.35; }
-
-/* Boarding-pass style creator passport, echoing the real OR insert */
-.pass { display: grid; grid-template-columns: minmax(0, 1fr) 132px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; max-width: 560px; }
+.pass { display: grid; grid-template-columns: minmax(0, 1fr) 132px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; max-width: 560px; }
 .pass .main { padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
-.pass .route { display: flex; align-items: center; gap: 14px; font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; }
-.pass .route i { font-style: normal; font-family: var(--body); font-size: 18px; color: var(--accent); }
+.pass .route { display: flex; align-items: center; gap: 14px; font-size: 38px; line-height: 1; color: var(--accent); }
+.pass .route i { font-style: normal; font-family: var(--body); font-size: 18px; color: var(--green); }
 .pass .row { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .pass .row div { display: grid; }
-.pass .row span { font-family: var(--label); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .pass .row b { font-size: 14px; font-weight: 600; }
-.pass .stub { border-left: 2px dashed var(--line); padding: 16px 14px; display: grid; gap: 8px; align-content: center; background: var(--pink-soft); }
-.pass .stub span { font-family: var(--label); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.pass .stub b { font-family: var(--display); font-size: 22px; line-height: 1.1; }
-
-.brands { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--display); font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2; }
-.brands span:not(:last-child)::after { content: "/"; margin-left: 18px; color: var(--accent); font-family: var(--body); font-weight: 400; }
-
-/* Events */
+.pass .stub { border-left: 2px dashed var(--line); padding: 16px 14px; display: grid; gap: 8px; align-content: center; }
+.pass .stub b { font-size: 24px; line-height: 1.1; color: var(--accent); }
+.brands { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; color: var(--accent); }
+.brands span:not(:last-child)::after { content: "\2726"; margin-left: 18px; color: var(--green); font-size: .5em; vertical-align: middle; }
 .events { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-.invite { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px 20px; display: grid; gap: 8px; align-content: start; }
-.invite .when { font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
-.invite h3 { font-size: 26px; line-height: 1.05; text-transform: uppercase; font-weight: 700; }
+.invite { background: var(--surface); border: 1px solid transparent; padding: 22px 20px 20px; display: grid; gap: 8px; align-content: start; }
 .invite p { margin: 0; font-size: 14.5px; color: var(--muted); }
 .feature-event { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; margin-bottom: 32px; align-items: start; }
-.feature-event .invite h3 { font-size: 34px; }
-
 .design-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-
+.about-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.about-copy { display: grid; gap: 16px; max-width: 58ch; font-size: 17px; }
+.about-copy p { margin: 0; }
+.pull { margin: 0; line-height: 1.15; text-wrap: balance; }
 .skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-.skills h3 { font-size: 24px; margin-bottom: 10px; }
+.skills h3 { font-size: 30px; margin-bottom: 10px; }
 .skills ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 15px; }
-
-/* Contact */
-.contact { background: var(--ink); color: var(--bg); border-bottom: 0; }
-.contact .label { color: var(--pink); }
-.contact h2 { font-size: clamp(44px, 8vw, 92px); line-height: .95; text-transform: uppercase; font-weight: 700; }
+.contact h2 { font-size: clamp(60px, 11vw, 130px); }
 .contact .wrap { display: grid; gap: 22px; }
 .contact-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.phone { font-family: var(--display); font-size: clamp(24px, 3.4vw, 34px); user-select: all; }
-.btn { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; border-radius: 999px; padding: 10px 18px; border: 1px solid var(--bg); color: var(--bg); background: transparent; cursor: pointer; text-decoration: none; }
-.btn:hover { background: var(--bg); color: var(--ink); }
-.contact a.btn { color: var(--bg); }
-.contact a.btn:hover { color: var(--ink); }
+.email { font-size: clamp(24px, 3.6vw, 38px); }
+.btn { font-family: var(--body); font-weight: 500; font-size: 15px; border-radius: 999px; padding: 10px 18px; border: 1px solid; background: transparent; cursor: pointer; text-decoration: none; }
 footer { padding-block: 22px; font-size: 13px; color: var(--muted); }
-
+#events { background: var(--bg-events); }
+#design { background: var(--bg-design); }
+#about { background: var(--bg-about); }
+#skills { background: var(--bg-skills); }
 @media (max-width: 760px) {
   .case { grid-template-columns: 1fr; }
   .meta dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .feature-event { grid-template-columns: 1fr; }
+  .feature-event, .about-grid { grid-template-columns: 1fr; }
   .skills { grid-template-columns: 1fr; }
   section { padding-block: 48px; }
 }
@@ -159,10 +145,114 @@ footer { padding-block: 22px; font-size: 13px; color: var(--muted); }
   .pass { grid-template-columns: 1fr; }
   .pass .stub { border-left: 0; border-top: 2px dashed var(--line); }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .hero h1 { animation: rise .7s ease-out both; }
-  @keyframes rise { from { transform: translateY(12px); opacity: .4; } to { transform: none; opacity: 1; } }
+/* Palette from the painted Canva pages, the Norway coast, and the rks journal logo. Fonts: serif display like the Canva headings, marker hand like the journal logo. */
+:root {
+  --bg: #F6F4F0; --surface: #FFFFFF;
+  --ink: #1F3322; --muted: #4A5E4C; --line: #D9DDD0;
+  --blue: #A7D2DD; --blue-soft: #A7D2DD; --yellow: #D0C858; --green: #5E905B;
+  --accent: #4C7F4A; --red: #C98F72;
+  --bg-hero: #BFDDE4; --bg-events: #EED9C4; --bg-design: #CFE2C6; --bg-about: #A7D2DD; --bg-skills: #E4E2A0;
+  --peach: #EED9C4; --sage: #CFE2C6; --butter: #E4E2A0;
+  --display: "DM Serif Display", "Georgia", serif;
+  --serif: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --hand: "Just Another Hand", "Bradley Hand", cursive;
+  color-scheme: light;
 }
+body { font-family: var(--body); font-synthesis: none; }
+h1, h2, h3, .stats b, .pass .route, .pass .stub b, .contact h2, .email { font-weight: 400 !important; font-style: normal; }
+h1, h2, h3 { color: var(--accent); letter-spacing: -.01em; line-height: 1; }
+.hero h1 { font-size: clamp(72px, 14vw, 170px); line-height: .88; }
+.hero .role { font-family: var(--hand); font-style: normal; font-size: 34px; color: #3E7E93; margin-bottom: 14px; }
+.hero .lede, .sec-head p, .story h3 small, .about-copy, .chapter-note { font-family: var(--body); font-style: normal; font-weight: 400; }
+.sec-head h2 { font-size: clamp(44px, 6.4vw, 78px); }
+.story h3 { font-size: clamp(34px, 4.4vw, 50px); }
+.invite h3 { font-size: 32px; }
+.feature-event .invite h3 { font-size: 40px; }
+.stats b { color: var(--accent); }
+.label, .meta dt, .invite .when, .pass .row span, .pass .stub span, .hand-note, .chapter-note, .shot figcaption {
+  font-family: var(--hand); font-style: normal; font-weight: 400; letter-spacing: .01em; }
+.label { font-size: 40px; color: #3E7E93; line-height: 1; }
+.meta dt, .invite .when { font-size: 28px; color: #3E7E93; }
+.pass .row span, .pass .stub span { font-size: 24px; color: #3E7E93; }
+.chapter-note { font-size: 30px; color: #3E7E93; max-width: none; }
+.pull { font-family: var(--display); font-size: clamp(38px, 5vw, 60px); color: var(--accent); }
+.hero .hl { background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 92%, transparent 92%); }
+.hero { background: var(--bg-hero); }
+.facts li, .tags span { border-radius: 999px; }
+.invite, .stats, .pass { border-radius: 14px; }
+.facts li { border-color: var(--ink); background: rgba(255,255,255,.55); }
+.tags span { border-radius: 999px; }
+.tags span:nth-child(4n+1) { background: #D5E8EE; }
+.tags span:nth-child(4n+2) { background: #E9E7B8; }
+.tags span:nth-child(4n+3) { background: #D9E8D2; }
+.tags span:nth-child(4n+4) { background: #F2E2D2; }
+.stats b, .story li::marker { color: var(--accent); }
+.story li::marker { color: var(--green); }
+.pass .stub { background: #D5E8EE; }
+.contact { --bg: #F6F4F0; --ink: #F6F4F0; background: #5E905B; color: #F6F4F0; }
+.contact .label { color: #DCEFF4; }
+.contact h2, .contact .email { color: #F6F4F0; }
+.contact .email { text-decoration-color: var(--blue); }
+.btn { border-color: #F6F4F0; color: #F6F4F0; }
+.btn:hover, .contact a.btn:hover { background: #F6F4F0; color: #3F6D3D; }
+ 
+/* Pastel pass: soft painted haze like the Canva "My Education" image. Less green, calmer type. */
+:root {
+  --ink: #2E3F3F; --muted: #5B6B69; --line: #E2DDD3;
+  --accent: #4B6663; --green: #9DBFA6; --yellow: #E3DC9A;
+  --bg-hero: #D3E3DD; --bg-events: #F3DFD0; --bg-design: #DCE7D3; --bg-about: #D0E4E9; --bg-skills: #EEEBCB;
+}
+h1, h2, h3, .stats b, .pass .route, .pass .stub b, .pull, .brands, .skills h3 { color: var(--accent); }
+.label, .meta dt, .invite .when, .pass .row span, .pass .stub span, .chapter-note { color: #6F9CA8; }
+.hero .role { font-family: var(--body); font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.story li::marker { color: #B8CFC0; }
+.pass .stub { background: #E1EEF1; }
+.tags span:nth-child(4n+1) { background: #DCEBEF; }
+.tags span:nth-child(4n+2) { background: #F0EDCD; }
+.tags span:nth-child(4n+3) { background: #E0EBD9; }
+.tags span:nth-child(4n+4) { background: #F6E5D8; }
+.contact { --bg: #2E3F3F; --ink: #2E3F3F; background: #BFD5CB; color: #2E3F3F; }
+.contact .label { color: #5E8793; }
+.contact h2, .contact .email { color: var(--ink); }
+.contact .email { text-decoration-color: #7FA6B2; }
+.btn { border-color: var(--ink); color: var(--ink); }
+.btn:hover, .contact a.btn:hover { background: var(--ink); color: #F6F4F0; }
+.contact a.btn { color: var(--ink); }
+ 
+/* No warm oranges: only blue, sea-teal, moss, lily yellow, and cream from the painting */
+:root { --peach: #D9E9EE; --red: #9DBFA6; --blue-soft: #D9E9EE;
+  --bg-hero: #D3E3DD; --bg-events: #D9E9EE; --bg-design: #DCE7D3; --bg-about: #C7DEDC; --bg-skills: #EEEBCB; }
+.tags span:nth-child(4n+4) { background: #D3E3DD; }
+.tags span:nth-child(4n+1) { background: #DCEBEF; }
+ 
+/* Fonts: Ovo for headings (Honoria stand-in), Tenor Sans for small labels, Spectral italic for chapter notes, Lora for reading text, Biryani for UI bits */
+:root {
+  --display: "Honoria", "Ovo", "Georgia", serif;
+  --body: "Lora", "Georgia", serif;
+  --serif: "Lora", "Georgia", serif;
+  --hand: "Spectral", "Georgia", serif;
+  --tenor: "Tenor Sans", "Helvetica Neue", Arial, sans-serif;
+  --ui: "Biryani", "Helvetica Neue", Arial, sans-serif;
+}
+body, .hero .lede, .sec-head p, .story h3 small, .about-copy, .now { font-family: var(--body); }
+.hero .lede { font-size: clamp(18px, 2vw, 21px); line-height: 1.55; }
+.story p, .story li, .invite p, .meta dd, .skills li { font-family: var(--body); }
+nav.jump a, .tags span, .facts li, .btn, .stats span, .pass .row b, .skills ul { font-family: var(--ui); }
+.hero .role, .meta dt, .invite .when, .pass .row span, .pass .stub span {
+  font-family: var(--tenor); font-style: normal; font-weight: 400; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; line-height: 1.4; }
+.hero .role { font-size: 13px; color: var(--muted); }
+.meta dt, .invite .when, .pass .row span, .pass .stub span { color: #5E8793; }
+.label { font-family: var(--hand); font-style: italic; font-weight: 300; font-size: 26px; line-height: 1.2; color: #5E8793; letter-spacing: 0; }
+.chapter-note { font-family: var(--hand); font-style: italic; font-weight: 300; font-size: 22px; line-height: 1.4; color: #5E8793; }
+.stats b { font-family: var(--display); }
+.sec-head h2 { font-size: clamp(42px, 6vw, 72px); line-height: 1.05; }
+.story h3 { font-size: clamp(32px, 4.2vw, 48px); line-height: 1.08; }
+.hero h1 { letter-spacing: -.015em; }
+.pull { font-family: var(--hand); font-style: italic; font-weight: 300; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.2; }
+.brands { font-family: var(--hand); font-style: italic; font-weight: 300; }
+.email { font-family: var(--display); }
+.contact .label { color: #4F7480; }
+ 
 </style>
 <style>
 :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -172,16 +262,15 @@ img { max-width: 100%; }
 </style>
 </head>
 <body>
-
-
+ 
+ 
 <header class="hero">
   <div class="wrap">
-    <span class="label">Portfolio 2024 to 2026</span>
     <h1>Riley<br>Ameli</h1>
     <div class="hero-row">
-      <p class="lede"><span class="role">Project Coordinator at Popfly</span>Project coordinator with a background in creator programs, product launches, and event planning for outdoor and lifestyle brands. I work directly with our CEO and COO on strategic decisions and people management, and I build the processes that keep cross-functional projects on track.</p>
-      <div style="display:grid; gap:14px;">
-        <p class="now"><strong>Popfly</strong> is a creator marketing platform for outdoor and lifestyle brands.</p>
+      <p class="lede"><span class="role">Project Coordinator at Popfly</span>i'm a creative with a background in social media, brand partnerships, and events. i love turning ideas into <span class="hl">things people remember</span>. a brand's visual identity, an activation people can't stop talking about, a story that feels real.</p>
+      <div style="display:grid; gap:14px; max-width:380px;">
+        <p class="now">Currently at <strong>Popfly</strong>, a creator marketing platform for outdoor and lifestyle brands.</p>
         <ul class="facts">
           <li>Project coordination</li>
           <li>Program management</li>
@@ -192,26 +281,28 @@ img { max-width: 100%; }
     </div>
   </div>
 </header>
-
+ 
 <nav class="jump" aria-label="Sections">
   <div class="wrap">
     <a href="#work">Popfly work</a>
     <a href="#events">Events</a>
     <a href="#design">Exterior design</a>
+    <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
+ 
 <main>
 <section id="work">
   <div class="wrap">
+    <p class="chapter-note">color, chaos, and a lot of people to bring together</p>
     <div class="sec-head">
-      <span class="label">Selected work at Popfly</span>
-      <h2>Creator programs, launches &amp; the systems behind them</h2>
-      <p>As project coordinator, I keep cross-functional work moving between our brand customers, our creator community, and our leadership team. These are programs I ran end to end, launches I coordinated, and systems I built.</p>
+      <span class="label">chapter one: the work</span>
+      <h2>Creator programs, launches, and the systems behind them</h2>
+      <p>The programs, launches, and stories I helped bring to life, plus the systems that kept them running.</p>
     </div>
-
+ 
     <article class="case">
       <aside class="meta">
         <dl>
@@ -222,8 +313,8 @@ img { max-width: 100%; }
         </dl>
       </aside>
       <div class="story">
-        <h3>Wild Reach Creator Program<small>Bringing outdoor creators to the industry's biggest trade show, and matching every one to the right brands</small></h3>
-        <p>Outdoor Retailer wanted creators on the show floor. I built the program that got them there. I managed the creator roster across four tiers, added a local tier for Minneapolis creators, and matched each creator with 7 to 10 exhibiting brands based on fit, location, and audience.</p>
+        <h3>Wild Reach Creator Program<small>Getting outdoor creators onto the industry's biggest trade show floor, and in front of the right brands</small></h3>
+        <p>Outdoor Retailer wanted creators on the show floor. I built the program that got them there. 447 creators applied and 109 got in. I ran the roster across four tiers and matched each creator with 7 to 10 exhibiting brands based on fit, location, and audience. Adding a local tier for Minneapolis creators ended up being <span class="hl">one of our best calls of the week</span>.</p>
         <div class="stats" role="list">
           <div role="listitem"><b>447</b><span>creator applications</span></div>
           <div role="listitem"><b>109</b><span>creators accepted</span></div>
@@ -235,10 +326,9 @@ img { max-width: 100%; }
           <div role="listitem"><b>4.3M</b><span>views on the top Reel</span></div>
         </div>
         <ul>
-          <li>Pulled about 200 consumer-facing brands from the exhibitor list and cross-checked them against our customer base to flag existing accounts and warm leads.</li>
-          <li>Designed the physical Creator Passport: a 5x7 boarding-pass style insert with each creator's brand matches, booth numbers, and QR codes.</li>
-          <li>Built the creator roster deck, prepped creator calls, and handled creator and brand communication before, during, and after the show.</li>
-          <li>Pivoted toward local Minneapolis creators, which ended up being one of the biggest wins of the event.</li>
+          <li>Pulled about 200 consumer-facing brands from the exhibitor list and checked them against our customer base to flag existing accounts and warm leads.</li>
+          <li>Designed the physical Creator Passport, a 5x7 boarding-pass style insert with each creator's brand matches, booth numbers, and QR codes.</li>
+          <li>Built the creator roster deck, prepped creator calls, and handled communication with creators and brands before, during, and after the show.</li>
           <li>Ran logistics for our Pop Off party during the show.</li>
         </ul>
         <div class="pass" aria-label="Creator Passport design, recreated">
@@ -255,32 +345,32 @@ img { max-width: 100%; }
             <b>5x7 print insert</b>
           </div>
         </div>
-        <p style="font-size:14.5px; color:var(--muted);">Press: the Star Tribune covered standout gear from the show, and TSNN credited OR 2026 for embracing creators. New brands started asking to join Popfly because of it.</p>
+        <p style="font-size:14.5px; color:var(--muted);">The Star Tribune covered standout gear from the show, and TSNN credited OR 2026 for embracing creators. New brands started asking to join Popfly because of it.</p>
         <div class="tags"><span>Program management</span><span>Creator relations</span><span>Brand matching</span><span>Print design</span><span>Event logistics</span></div>
       </div>
     </article>
-
+ 
     <article class="case">
       <aside class="meta">
         <dl>
           <div><dt>Project</dt><dd>Evergreens launch</dd></div>
           <div><dt>When</dt><dd>Launched July 7, 2026</dd></div>
-                    <div><dt>My role</dt><dd>Launch marketing, customer education, and executive content</dd></div>
+          <div><dt>My role</dt><dd>Launch marketing, customer education, and executive content</dd></div>
         </dl>
       </aside>
       <div class="story">
         <h3>Evergreens Launch<small>Introducing Popfly's always-on creator ambassador program to our customers</small></h3>
-        <p>Coordinated the customer-facing launch of Evergreens, Popfly's always-on creator ambassador program. The focus was making a new program model easy for brands to understand and adopt.</p>
+        <p>Evergreens is Popfly's always-on creator ambassador program, and my job was making a new program model easy for brands to understand and say yes to.</p>
         <ul>
-          <li>Created a physical mailer for paying customers with a plantable seed card, tying the product name to something they could actually grow.</li>
-          <li>Ran a live training session to walk customers through how the program works.</li>
+          <li>Mailed paying customers a plantable seed card, so the name Evergreens became something they could actually grow.</li>
+          <li>Ran a live training to walk customers through how the program works.</li>
           <li>Planned the LinkedIn content strategy for our founder and CEO around the launch.</li>
           <li>Wrote a dedicated newsletter edition explaining the program.</li>
         </ul>
         <div class="tags"><span>Product launch</span><span>Direct mail</span><span>Customer training</span><span>LinkedIn strategy</span></div>
       </div>
     </article>
-
+ 
     <article class="case">
       <aside class="meta">
         <dl>
@@ -291,15 +381,15 @@ img { max-width: 100%; }
       </aside>
       <div class="story">
         <h3>The Weekly Trail Mix<small>A weekly insights newsletter for every Popfly brand customer</small></h3>
-        <p>I write and send our weekly customer newsletter in our CEO's voice. Each edition takes one trend or opportunity in creator marketing and makes it something a brand can act on that week. It ends with a Flyby Challenge, a small prompt to try something new on the platform.</p>
+        <p>I write and send our weekly customer newsletter in our CEO's voice. Each edition takes one trend or opportunity in creator marketing and turns it into something a brand can act on that week. It ends with the Flyby Challenge, a small prompt to try something new on the platform.</p>
         <ul>
-          <li>Recent editions covered creator storefronts as an always-on retail model, Instagram Stories tracking, the Summer of Adventure campaign, Evergreens, and a swag bag opportunity for Outdoor Retailer brands.</li>
-          <li>Built a reusable HTML template and voice guide so every edition looks and sounds consistent.</li>
+          <li>Recent editions covered creator storefronts as an always-on retail model, Instagram Stories tracking, Summer of Adventure, Evergreens, and a swag bag opportunity for Outdoor Retailer brands.</li>
+          <li>Built a reusable HTML template and a voice guide, so every edition looks and sounds consistent.</li>
         </ul>
         <div class="tags"><span>Email marketing</span><span>Copywriting</span><span>Executive voice</span><span>HTML email</span></div>
       </div>
     </article>
-
+ 
     <article class="case">
       <aside class="meta">
         <dl>
@@ -309,48 +399,48 @@ img { max-width: 100%; }
         </dl>
       </aside>
       <div class="story">
-        <h3>Creator Campaigns for Outdoor &amp; Lifestyle Brands<small>Keeping campaigns moving from shortlist to posted content</small></h3>
+        <h3>Creator Campaigns for Outdoor and Lifestyle Brands<small>Keeping campaigns moving from shortlist to posted content</small></h3>
         <div class="brands" aria-label="Brands">
           <span>Hydro Flask</span><span>Osprey</span><span>SMITH</span><span>Alpaka</span><span>FBN</span><span>Flexsteel</span><span>AllTrails</span><span>Backcountry</span>
         </div>
-        <p>I coordinate creator campaigns day to day across a portfolio of brand accounts. The work runs from UGC and campus programs to TikTok Shop Live and event activations.</p>
+        <p>I coordinate creator campaigns day to day across a portfolio of brand accounts, from UGC and campus programs to TikTok Shop Live and event activations.</p>
         <ul>
-          <li>Hydro Flask Carryout Lunch and Hot Bev content, SMITH's Ulterior Collection, and Osprey campus UGC.</li>
-          <li>Recruited creators for Alpaka's TikTok Shop Live and an unpaid creator activation at TheFitExpo Anaheim.</li>
-          <li>Handle shortlists, rate negotiations, usage terms, contract follow-ups, and creator support so brands can stay focused on the creative.</li>
+          <li>Worked on Hydro Flask's Carryout Lunch and Hot Bev content, SMITH's Ulterior Collection, and Osprey's campus UGC.</li>
+          <li>Recruited creators for Alpaka's TikTok Shop Live and for an unpaid creator activation at TheFitExpo Anaheim.</li>
+          <li>Handle shortlists, rate negotiations, usage terms, contract follow-ups, and creator support, so brands can stay focused on the creative.</li>
         </ul>
-        <div class="tags"><span>Account management</span><span>Negotiation</span><span>Contracts &amp; usage rights</span><span>Creator sourcing</span></div>
+        <div class="tags"><span>Account management</span><span>Negotiation</span><span>Contracts and usage rights</span><span>Creator sourcing</span></div>
       </div>
     </article>
-
+ 
     <article class="case">
       <aside class="meta">
         <dl>
-          <div><dt>Project</dt><dd>Summer of Adventure + social</dd></div>
+          <div><dt>Project</dt><dd>Summer of Adventure and social</dd></div>
           <div><dt>My role</dt><dd>Launch content and social posts</dd></div>
         </dl>
       </aside>
       <div class="story">
         <h3>Summer of Adventure Launch<small>Seasonal campaign content for Popfly's own channels</small></h3>
-        <p>Created launch content and social posts for Summer of Adventure and the Evergreens launch. The goal was content that feels warm and real, like the creators we work with.</p>
+        <p>I created the launch content and social posts for Summer of Adventure and Evergreens. I wanted it to feel warm and real, like the creators we work with.</p>
         <div class="tags"><span>Social content</span><span>Photo + video</span><span>Campaign launch</span></div>
       </div>
     </article>
-
+ 
     <article class="case">
       <aside class="meta">
         <dl>
-          <div><dt>Project</dt><dd>Systems &amp; content</dd></div>
+          <div><dt>Project</dt><dd>Systems and content</dd></div>
           <div><dt>My role</dt><dd>Builder and owner</dd></div>
         </dl>
       </aside>
       <div class="story">
-        <h3>Operations &amp; Internal Systems<small>Templates, guides, and tools I built to help the team scale</small></h3>
+        <h3>Operations and Internal Systems<small>Templates, guides, and tools I built to help the team scale</small></h3>
         <ul>
-          <li><strong>Case study program.</strong> Turned our published customer stories, like Camp Chef, Carhartt, Haute Haus, and Visit Salt Lake, into a repeatable format for writing new ones fast.</li>
-          <li><strong>Social listening report.</strong> Designed a monthly client report covering brand mentions, product confusion, unexpected use cases, and creator recommendations.</li>
+          <li><strong>Case study program.</strong> Turned our published customer stories, like Camp Chef, Carhartt, Haute Haus, and Visit Salt Lake, into a repeatable format so new ones get written fast.</li>
+          <li><strong>Social listening report.</strong> Designed a monthly client report on brand mentions, product confusion, unexpected use cases, and creator recommendations.</li>
           <li><strong>Operations guide.</strong> Wrote our internal guide for new customer setup, billing, and creator payments.</li>
-          <li><strong>Brand strategy builder.</strong> Built an internal web tool with separate workspaces for each brand.</li>
+          <li><strong>Brand strategy builder.</strong> Built an internal web tool with a separate workspace for each brand.</li>
           <li><strong>Executive content.</strong> Draft LinkedIn posts for our founder and CEO around launches, events, and hiring.</li>
           <li><strong>AI workflows.</strong> Set up AI-assisted templates that speed up case studies, newsletters, and campaign briefs.</li>
         </ul>
@@ -359,19 +449,20 @@ img { max-width: 100%; }
     </article>
   </div>
 </section>
-
+ 
 <section id="events">
   <div class="wrap">
+    <p class="chapter-note">the best part of any event is the people</p>
     <div class="sec-head">
-      <span class="label">Events</span>
+      <span class="label">chapter two: the gatherings</span>
       <h2>Events I've planned</h2>
-      <p>I plan and style events from the first idea to clean-up. Themes, vendors, decor, budgets, and day-of flow.</p>
+      <p>I plan and style events from the first idea to clean-up: themes, vendors, decor, budgets, and day-of flow.</p>
     </div>
     <div class="feature-event">
       <div class="invite">
         <span class="when">December 2024</span>
         <h3>C + W Engagement</h3>
-        <p>Planned and styled an engagement celebration. Custom signage and stationery, a candlelit tablescape, florals, dessert, and a seated dinner for a full room of guests.</p>
+        <p>I planned and styled an engagement celebration with custom signage and stationery, a candlelit tablescape, florals, dessert, and a seated dinner for a full room of guests.</p>
       </div>
       <div class="story">
         <p>What I handled for most events:</p>
@@ -387,85 +478,106 @@ img { max-width: 100%; }
       <span class="label">Chi Omega chapter events, 2025</span>
     </div>
     <div class="events">
-      <div class="invite"><span class="when">February 2025</span><h3>New Member Dance</h3><p>Themed dance with custom decor, photo moments, and merch.</p></div>
-      <div class="invite"><span class="when">March 2025</span><h3>Tacky Prom</h3><p>Roller rink takeover with themed signage and decor.</p></div>
-      <div class="invite"><span class="when">March 2025</span><h3>Moms Day</h3><p>Daytime brunch with florals, food styling, and gifts.</p></div>
-      <div class="invite"><span class="when">April 2025</span><h3>White Carnation Formal</h3><p>Evening formal at an outdoor estate venue.</p></div>
-      <div class="invite"><span class="when">August 2025</span><h3>Crush</h3><p>Outdoor waterfront party with tents, banners, and a big guest list.</p></div>
+      <div class="invite"><span class="when">February 2025</span><h3>New Member Dance</h3><p>A themed dance with custom decor, photo moments, and merch.</p></div>
+      <div class="invite"><span class="when">March 2025</span><h3>Tacky Prom</h3><p>A roller rink takeover with themed signage and decor.</p></div>
+      <div class="invite"><span class="when">March 2025</span><h3>Moms Day</h3><p>A daytime brunch with florals, food styling, and gifts.</p></div>
+      <div class="invite"><span class="when">April 2025</span><h3>White Carnation Formal</h3><p>An evening formal at an outdoor estate venue.</p></div>
+      <div class="invite"><span class="when">August 2025</span><h3>Crush</h3><p>An outdoor waterfront party with tents, banners, and a big guest list.</p></div>
     </div>
   </div>
 </section>
-
+ 
 <section id="design">
   <div class="wrap">
+    <p class="chapter-note">where pretty ideas become real places</p>
     <div class="sec-head">
-      <span class="label">Exterior design</span>
+      <span class="label">chapter three: the spaces</span>
       <h2>Residential exterior design</h2>
-      <p>Design work for home exteriors and outdoor living spaces.</p>
+      <p>I design home exteriors and outdoor living spaces, and I love the moment a pretty idea turns into a plan someone can actually build.</p>
     </div>
     <div class="design-grid">
       <div class="invite"><span class="when">Presentations</span><h3>Design Presentations</h3><p>Client-facing boards and renderings for home exteriors, patios, and outdoor living areas.</p></div>
-      <div class="invite"><span class="when">Planning</span><h3>Hardscape &amp; Sourcing</h3><p>Plant palettes, material selections, and sourcing sheets that turned a concept into a buildable plan.</p></div>
+      <div class="invite"><span class="when">Planning</span><h3>Hardscape and Sourcing</h3><p>Plant palettes, material selections, and sourcing sheets that turn a concept into a buildable plan.</p></div>
     </div>
   </div>
 </section>
-
+ 
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">chapter four: the person</span>
+      <h2>hi, i'm riley</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>i'm happiest when an idea starts as a messy note on my phone and ends up as something you can touch, taste, scroll, or show up to. a brand identity, a party, a newsletter, a seed card that actually grows.</p>
+        <p>i do my best work with curious, collaborative people who care about what they're building. bring me the weird idea. i'll bring the mood board and the plan.</p>
+        <p>outside of work, you'll find me surfing, painting, reading, or booking a flight. i'm 15 countries in and already planning the next one.</p>
+        <p>i'm looking for work that stretches me, personally and professionally, and makes a real difference.</p>
+      </div>
+      <blockquote class="pull">bring me the weird idea.<br>i'll bring the plan.</blockquote>
+    </div>
+  </div>
+</section>
+ 
 <section id="skills">
   <div class="wrap">
     <div class="sec-head">
-      <span class="label">What I bring</span>
-      <h2>Skills &amp; tools</h2>
+      <span class="label">the toolkit</span>
+      <h2>Skills and tools</h2>
     </div>
     <div class="skills">
       <div>
         <h3>Project management</h3>
-        <ul><li>Cross-functional project coordination</li><li>Program planning and execution</li><li>Executive partnership with CEO and COO</li><li>Process design and documentation</li></ul>
+        <ul><li>Keeping projects moving across teams</li><li>Program planning and execution</li><li>Turning big ideas into clear next steps</li><li>Process design and documentation</li></ul>
       </div>
       <div>
-        <h3>Partnerships &amp; marketing</h3>
+        <h3>Partnerships and marketing</h3>
         <ul><li>Creator recruiting and relations</li><li>Brand account coordination</li><li>Rate and usage negotiation</li><li>Newsletters, case studies, and launches</li></ul>
       </div>
       <div>
-        <h3>Events &amp; design</h3>
+        <h3>Events and design</h3>
         <ul><li>Event planning and production</li><li>Print and visual design in Canva</li><li>Presentations and decks</li><li>Google Workspace, Slack, AI tools</li></ul>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <section id="contact" class="contact">
   <div class="wrap">
-    <span class="label">Let's talk</span>
-    <h2>Get in touch</h2>
+    <span class="label">the next page</span>
+    <h2>Say hello</h2>
     <div class="contact-row">
-      <span class="phone" id="phone">+1 (949) 656-5344</span>
-      <button class="btn" id="copy" type="button">Copy number</button>
-      <a class="btn" href="https://canva.link/mpb76bn0h8qep13" target="_blank" rel="noopener">See the photo portfolio</a>
+      <a class="email" id="email" href="mailto:rileyameli22@gmail.com">rileyameli22@gmail.com</a>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn" href="https://canva.link/2ygnv3tuuk9mf7q" target="_blank" rel="noopener">See the photo portfolio</a>
     </div>
   </div>
 </section>
 </main>
-
+ 
 <footer>
-  <div class="wrap">Riley Ameli, Portfolio 2024 to 2026</div>
+  <div class="wrap">Riley Ameli</div>
 </footer>
-
+ 
 <script>
 document.getElementById('copy').addEventListener('click', async (e) => {
   const btn = e.currentTarget;
-  const text = document.getElementById('phone').textContent.trim();
+  const text = document.getElementById('email').textContent.trim();
   try {
     await navigator.clipboard.writeText(text);
     btn.textContent = 'Copied';
   } catch (err) {
     const r = document.createRange();
-    r.selectNodeContents(document.getElementById('phone'));
+    r.selectNodeContents(document.getElementById('email'));
     const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
     btn.textContent = 'Selected';
   }
-  setTimeout(() => { btn.textContent = 'Copy number'; }, 1800);
+  setTimeout(() => { btn.textContent = 'Copy email'; }, 1800);
 });
 </script>
-
+ 
 </body>
 </html>
+
+
